@@ -3,6 +3,7 @@
  */
 package org.blc.training.homedesign;
 
+import org.blc.training.homedesign.mobilier.Armoire;
 import org.blc.training.homedesign.mobilier.Table;
 
 /**
@@ -38,16 +39,22 @@ public class HomeDesign {
 //        System.out.println("Nom de ma table " + t.getNom());
 //        t.setNom("Prout");
 //        System.out.println("Nom de ma table " + t.getNom());
-
-        Table.show(dm);
-        
-        Table [] tables = new Table[50];
+        Table[] tables = new Table[50];
         // Remplir le comptenu
-        for(int i =0; i < tables.length; i++){
+        for (int i = 0; i < tables.length; i++) {
             tables[i].generate();
         }
-        for(int i =0; i < tables.length; i++){
+        for (int i = 0; i < tables.length; i++) {
             tables[i].show();
+        }
+
+        Armoire[] armoires = new Armoire[50];
+        // Remplir le comptenu
+        for (int i = 0; i < armoires.length; i++) {
+            armoires[i].createRandom();
+        }
+        for (int i = 0; i < armoires.length; i++) {
+            armoires[i].display();
         }
     }
 }

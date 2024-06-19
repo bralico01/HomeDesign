@@ -2,19 +2,20 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package org.blc.training.homedesign.mobilier;
+package org.blc.training.homedesign.mobilier.armoire;
 
 /**
  *
  * @author r.hendrick
  */
-public class Table {
+public class ArmoireBasse {
 
     private String couleur;
     private Float longuer;
     private Float largeur;
     private Float hauteur;
     private Float epaisseur;
+
     /**
      * Nombre de pied de la table
      */
@@ -99,46 +100,8 @@ public class Table {
         this.reference = reference;
     }
 
-    public void setTaille(float longueur, float largeur, float hauteur) {
-//        this.largeur = largeur;
-//        this.hauteur = hauteur;
-//        this.longuer = longueur;
+    public void createRandom() {
 
-        setLargeur(largeur);
-        setLonguer(longueur);
-        setHauteur(hauteur);
-    }
-
-    public void show() {
-        System.out.println("==============");
-        System.out.println("Nom : " + this.nom);
-        System.out.println("Pide(s) : " + this.pied);
-        System.out.println("Couleur : " + this.couleur);
-        System.out.println("Taille === ");
-        System.out.println("> Longueur : " + this.longuer);
-        System.out.println("> Largeur : " + this.largeur);
-        System.out.println("> Hauteur : " + this.hauteur);
-    }
-
-    public static void show(Table table) {
-        System.out.println("==============");
-        System.out.println("Nom : " + table.nom);
-        System.out.println("Pide(s) : " + table.pied);
-        System.out.println("Couleur : " + table.couleur);
-        System.out.println("Taille === ");
-        System.out.println("> Longueur : " + table.longuer);
-        System.out.println("> Largeur : " + table.largeur);
-        System.out.println("> Hauteur : " + table.hauteur);
-    }
-
-    /**
-     * Consiste à générer les informations aléatoire attribut après attribut
-     *
-     * La fonction generate doit retourner les paramètres clé de la classe
-     * automatiquement remplie. Le remplissage de ce fait sur le nom de la façon
-     * décrtique par la méthode @{Table#generateNom()}
-     */
-    public void generate() {
         generateNom();
         generatePied();
         generateCouleur();
@@ -147,20 +110,52 @@ public class Table {
         generateHauteur();
     }
 
+    public void display() {
+
+    }
+
     /**
-     * 
+     * Chaque armoire va porter le nom par défaut avec le préfeixe AB_####
      */
     private void generateNom() {
-        
-        
+        generateNomBySubStr();
+    }
+
+    private void generateNomByWhile() {
+        // Génération d'un nombre aléatoire entre 0 et 9999
+        Integer nombreAleatoire = (int) (Math.random() * 9999.0);
+
+        // Ajuster le format du nombre sur 4 digit        
+        String nombreAleatoireStr = String.valueOf(nombreAleatoire);
+        while (nombreAleatoireStr.length() < 4) {
+            nombreAleatoireStr = "0" + nombreAleatoireStr;
+        }
+
+        // Concatener le nom avec le prefixe
+        nom = "AB_" + nombreAleatoireStr;
+
+    }
+    
+    
+    private void generateNomBySubStr() {
+        // Génération d'un nombre aléatoire entre 0 et 9999
+        Double nombreAleatoire = Math.random();
+
+        // Ajuster le format du nombre sur 4 digit        
+        String nombreAleatoireStr =
+                String.valueOf(nombreAleatoire).substring(2, 6);
+
+        // Concatener le nom avec le prefixe
+        nom = "AB_" + nombreAleatoireStr;
+
     }
 
     private void generatePied() {
-        
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     private void generateCouleur() {
-        
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     private void generateLongueur() {
